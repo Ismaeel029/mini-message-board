@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title><%=title %></title>
+</head>
+<body>
+    <h1>Mini Message Board</h1>
+    <div>
+        <ul>
+            <% for(const obj of messages){ %>
+                <li>
+                    <p>User: <%=obj.user %></p>
+                    <p><%=obj.text %></p>
+                    <p>Date added: <%=obj.added %></p>
+                    <p><a href="/<%= obj.id%>">See message</a></p>
+                    <form method="POST" action="/<%= obj.id%>">
+                        <button>Delete</button>
+                    </form>
+                </li>
+                
+            <%}%>
+        </ul>
+    </div>
+    <p><a href="/new">New Message</a></p>
+</body>
+</html>
